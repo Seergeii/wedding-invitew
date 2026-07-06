@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat+Brush&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-script: "Bad Script", cursive;
+  --font-handwritten: "Caveat Brush", cursive;
+  
+  --color-warm-cream: #FAF7E8; /* Основной фон - теплый молочный, более светлый, желтоватый */
+  --color-secondary-bg: #F5E3E5; /* Вторичный фон, нежный светлый розовато-молочный */
+  --color-primary-accent: #CE6A82; /* Основной акцент - более сочный пудрово-розовый */
+  --color-light-pink: #E2A6B7; /* Светлый розовый */
+  --color-cream: #F9E8BF; /* Насыщенный кремовый, но полегче */
+  --color-light-sage: #BACDB1; /* Более насыщенный шалфей */
+  --color-soft-blue: #B9D7E8; /* Нежно-голубой */
+  --color-light-lavender: #C9BADF; /* Светлая лаванда */
+  
+  --color-text-headings: #361F18; /* Заголовки - насыщенный темно-коричневый */
+  --color-text-body: #55413C; /* Основной текст - глубокий кофейный / каштановый */
+  --color-text-secondary: #806B66; /* Второстепенный текст - мягкий теплый тауп */
+  --color-accent-dark: #361F18; /* Темный акцент для деталей */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-warm-cream);
+    color: var(--color-text-body);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-headings);
+  }
+}
+
+/* Custom subtle grain/paper texture overlay */
+.paper-texture {
+  position: relative;
+}
+
+.paper-texture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 10;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+}
+
+

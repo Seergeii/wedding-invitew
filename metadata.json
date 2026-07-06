@@ -1,0 +1,6 @@
+{
+  "name": "Свадебное приглашение",
+  "description": "Элегантное интерактивное свадебное приглашение с обратным отсчетом, таймингом, подтверждением присутствия (RSVP) и дресс-кодом",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
